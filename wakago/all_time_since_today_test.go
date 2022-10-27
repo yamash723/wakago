@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGetAllTimeSinceToday(t *testing.T) {
+func TestAllTimeSinceToday_Get(t *testing.T) {
 	httpmock.Activate()
 	defer httpmock.DeactivateAndReset()
 
