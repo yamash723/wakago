@@ -9,21 +9,21 @@ import (
 type AllTimeSinceTodayService service
 
 type AllTimeSinceToday struct {
-	Data Data `json:"data"`
+	Data AllTimeSinceTodayData `json:"data"`
 }
 
-type Data struct {
-	Decimal           string  `json:"decimal"`
-	Digital           string  `json:"digital"`
-	IsUpToDate        bool    `json:"is_up_to_date"`
-	PercentCalculated int     `json:"percent_calculated"`
-	Range             Range   `json:"range"`
-	Text              string  `json:"text"`
-	Timeout           int     `json:"timeout"`
-	TotalSeconds      float32 `json:"total_seconds"`
+type AllTimeSinceTodayData struct {
+	Decimal           string                 `json:"decimal"`
+	Digital           string                 `json:"digital"`
+	IsUpToDate        bool                   `json:"is_up_to_date"`
+	PercentCalculated int                    `json:"percent_calculated"`
+	Range             AllTimeSinceTodayRange `json:"range"`
+	Text              string                 `json:"text"`
+	Timeout           int                    `json:"timeout"`
+	TotalSeconds      float32                `json:"total_seconds"`
 }
 
-type Range struct {
+type AllTimeSinceTodayRange struct {
 	End       time.Time `json:"end"`
 	EndDate   string    `json:"end_date"`
 	EndText   string    `json:"end_text"`

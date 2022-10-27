@@ -51,12 +51,12 @@ func TestGetAllTimeSinceToday(t *testing.T) {
 	}
 
 	expected := AllTimeSinceToday{
-		Data: Data{
+		Data: AllTimeSinceTodayData{
 			Decimal:           "12.80",
 			Digital:           "12:48",
 			IsUpToDate:        true,
 			PercentCalculated: 100,
-			Range: Range{
+			Range: AllTimeSinceTodayRange{
 				End:       time.Date(2022, 10, 23, 14, 59, 59, 0, time.UTC),
 				EndDate:   "2022-10-23",
 				EndText:   "Today",
