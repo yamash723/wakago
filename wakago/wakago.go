@@ -26,6 +26,7 @@ type Client struct {
 	DefaultHeader *http.Header
 
 	AllTimeSinceTodayService *AllTimeSinceTodayService
+	MetaService              *MetaService
 }
 
 type service struct {
@@ -41,6 +42,7 @@ func NewClient(httpClient *http.Client) *Client {
 
 	c := &Client{client: &http.Client{}, baseURL: baseURL, UserAgent: defaultUserAgent}
 	c.AllTimeSinceTodayService = &AllTimeSinceTodayService{client: c}
+	c.MetaService = &MetaService{client: c}
 
 	return c
 }
