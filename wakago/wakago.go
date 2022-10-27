@@ -27,6 +27,7 @@ type Client struct {
 
 	AllTimeSinceTodayService *AllTimeSinceTodayService
 	MetaService              *MetaService
+	EditorsService           *EditorsService
 }
 
 type service struct {
@@ -43,6 +44,7 @@ func NewClient(httpClient *http.Client) *Client {
 	c := &Client{client: &http.Client{}, baseURL: baseURL, UserAgent: defaultUserAgent}
 	c.AllTimeSinceTodayService = &AllTimeSinceTodayService{client: c}
 	c.MetaService = &MetaService{client: c}
+	c.EditorsService = &EditorsService{client: c}
 
 	return c
 }
