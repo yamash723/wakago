@@ -26,6 +26,7 @@ type Client struct {
 	DefaultHeader *http.Header
 
 	AllTimeSinceTodayService *AllTimeSinceTodayService
+	CommitsService           *CommitsService
 	DurationsService         *DurationsService
 	EditorsService           *EditorsService
 	GoalsService             *GoalsService
@@ -45,6 +46,7 @@ func NewClient(httpClient *http.Client) *Client {
 
 	c := &Client{client: &http.Client{}, baseURL: baseURL, UserAgent: defaultUserAgent}
 	c.AllTimeSinceTodayService = &AllTimeSinceTodayService{client: c}
+	c.CommitsService = &CommitsService{client: c}
 	c.DurationsService = &DurationsService{client: c}
 	c.EditorsService = &EditorsService{client: c}
 	c.GoalsService = &GoalsService{client: c}
